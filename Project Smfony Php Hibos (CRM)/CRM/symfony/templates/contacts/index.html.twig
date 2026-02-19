@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Contacts{% endblock %}
+
+{% block body %}
+    <h1>Contacts</h1>
+
+    {# Formulaire de recherche #}
+    <div class="mb-4">
+        {{ form_start(searchForm, {'method': 'get'}) }}
+            <div class="row">
+                <div class="col-md-3">
+                    {{ form_widget(searchForm.q, {'attr': {'class': 'form-control', 'placeholder': 'Nom ou Email'}}) }}
+                </div>
+                <div class="col-md-2">
+                    {{ form_widget(searchForm.city, {'attr': {'class': 'form-control', 'placeholder': 'Ville'}}) }}
+                </div>
+                <div class="col-md-2">
+                    {{ form_widget(searchForm.tag, {'attr': {'class': 'form-control', 'placeholder': 'Tag'}}) }}
+                </div>
+                <div class="col-md-2">
+                    {{ form_widget(searchForm.sort, {'attr': {'class': 'form-select'}}) }}
+                </div>
+                <div class="col-md-2">
+                    {{ form_widget(searchForm.dir, {'attr': {'class': 'form-select'}}) }}
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-primary w-100">{{ searchForm.search.vars.label }}</button>
+                </div>
+            </div>
+        {{ form_end(searchForm) }}
+    </div>
+
+    {# Tableau des contacts #}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Ville</th>
+                <th>Tags</th>
+                <th>Créé le</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.phone }}</td>
+                <td>{{ contact.city }}</td>
+                <td>
+                    {% for tag in contact.tags %}
+                        <span class="badge bg-info text-dark">{{ tag.label }}</span>
+                    {% else %}
+                        <span class="text-muted">Aucun</span>
+                    {% endfor %}
+                </td>
+                <td>{{ contact.createdAt|date('d/m/Y H:i') }}</td>
+                <td>
+                    <a href="{{ path('contact_show', {'id': contact.id}) }}" class="btn btn-sm btn-secondary">Voir</a>
+                    <a href="{{ path('contact_edit', {'id': contact.id}) }}" class="btn btn-sm btn-warning">Modifier</a>
+                    <a href="{{ path('contact_delete', {'id': contact.id}) }}" class="btn btn-sm btn-danger"
+                       onclick="return confirm('Supprimer ce contact ?');">Supprimer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7" class="text-center text-muted">Aucun contact trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('contact_new') }}" class="btn btn-success">+ Nouveau Contact</a>
+{% endblock %}
