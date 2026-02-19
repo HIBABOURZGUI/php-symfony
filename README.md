@@ -1,13 +1,21 @@
 <div align="center">
-🚀 SYMFONY CRM
-PROFESSIONAL CUSTOMER RELATIONSHIP MANAGEMENT
-🔧 VERSION	🏗️ BUILD	📜 LICENSE
-1.0.0	✅ PASSING	🟢 MIT
-🌟 Application CRM professionnelle développée avec Symfony
-Par Hiba Bourzgui – Gestion complète de clients, leads et interactions... 📊
 
-⭐ Stars	🍴 Forks
-https://img.shields.io/github/stars/HIBABOURZGUI/php-symfony?style=social	https://img.shields.io/github/forks/HIBABOURZGUI/php-symfony?style=social
+# 🚀 **SYMFONY CRM**  
+### **PROFESSIONAL CUSTOMER RELATIONSHIP MANAGEMENT**
+
+| 🔧 **VERSION** | 🏗️ **BUILD** | 📜 **LICENSE** |
+|:--------------:|:------------:|:--------------:|
+| **1.0.0**      | ✅ PASSING   | 🟢 MIT         |
+
+---
+
+🌟 **Application CRM professionnelle développée avec Symfony**  
+Par **Hiba Bourzgui** – Gestion complète de clients, leads et interactions... 📊
+
+| ⭐ **Stars** | 🍴 **Forks** |
+|:-----------:|:-----------:|
+| ![Stars](https://img.shields.io/github/stars/HIBABOURZGUI/php-symfony?style=social) | ![Forks](https://img.shields.io/github/forks/HIBABOURZGUI/php-symfony?style=social) |
+
 </div>
 
 ## 📋 Table des Matières
