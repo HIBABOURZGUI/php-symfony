@@ -507,9 +507,9 @@ Hiba Bourzgui
 <div align="center">
 
 **MIT License**  
-Copyright (c) 2024 Hiba Bourzgui
+Copyright (c) 2025 Hiba Bourzgui
 
 
-© 2024 Hiba Bourzgui - Tous droits réservés
+© 2025 Hiba Bourzgui - Tous droits réservés
 
 </div>
